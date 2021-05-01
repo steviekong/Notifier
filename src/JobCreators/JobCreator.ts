@@ -41,7 +41,6 @@ class JobCreator{
 
   /** Create a job that sends a notification based on a cron tab string periodically  */
   createJobs = () => {
-    console.log(this.notificationsList)
     if(this.notificationsList){
       this.notificationsList.forEach(async (notification: NotificationInterface) => {
         let job;
