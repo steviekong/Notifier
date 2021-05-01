@@ -1,0 +1,9 @@
+[
+  {
+    "medium": "EMAIL",
+    "cron": "* * * * *",
+    "user": "608c14e4166000bb332192f7",
+    "subject": "test",
+    "text": "test"
+  }
+]
