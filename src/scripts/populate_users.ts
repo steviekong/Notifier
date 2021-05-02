@@ -3,7 +3,7 @@ import path from "path"
 import { promises as fs } from "fs";;
 
 const addUsers = async () => {
-  const data = await fs.readFile(path.resolve("/Users/sidharthrejikumar/interview/stack_finance/src/scripts/users.json"))
+  const data = await fs.readFile(path.resolve(__dirname, "../../src/scripts/users.json"))
 
   const jsonData = JSON.parse(data.toString());
   for(const val of jsonData){

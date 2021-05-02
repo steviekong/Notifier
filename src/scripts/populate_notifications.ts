@@ -3,7 +3,7 @@ import path from "path"
 import { promises as fs } from "fs";
 
 const addNotifications = async () => {
-  const data = await fs.readFile(path.resolve("/Users/sidharthrejikumar/interview/stack_finance/src/scripts/notification.json"))
+  const data = await fs.readFile(path.resolve(__dirname, "../../src/scripts/notification.json"))
   const jsonData = JSON.parse(data.toString());
   for(const val of jsonData){
     const notification = new UserNotification({
