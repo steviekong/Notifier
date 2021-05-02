@@ -3,6 +3,7 @@ import { SingleNotification } from "../types/singleNotification";
 import SendEmailJob from "../Jobs/SendEmailJob";
 import { NotificationInterface } from "../models/userNotification"
 import { User, UserInterface } from "../models/user";
+import { emailConfig } from "../Configs/emailConfig";
 
 class JobCreator{
   notificationsList: NotificationInterface[] | null;
@@ -16,7 +17,7 @@ class JobCreator{
 
   createListeners = () => {
     /** More can be added here for additional mediums */
-    const sendEmailJob = new SendEmailJob(process.env.SENDER_EMAIL, this.agenda)
+    const sendEmailJob = new SendEmailJob(process.env.SENDER_EMAIL, this.agenda, emailConfig)
     sendEmailJob.defineJob()
   }
 
@@ -28,8 +29,7 @@ class JobCreator{
       /** Switch and dispatch appropriate job based on medium, more can be added here */
       switch(this.notification.medium){
         case "EMAIL":
-          this.agenda.now("sendemail", data)
-          break;
+          return this.agenda.now("sendemail", data);
         default:
           throw new Error("Invalid medium error");
       }

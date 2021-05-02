@@ -76,4 +76,27 @@ This will fire a notification based on the following JSON input.
 
 Only medium currently supported is EMAIL.
 
+### Running tests
+
+1. Go to https://ethereal.email/ create an account.
+
+2. Add the created email and password to .env as follows
+
+```
+TEST_EMAIL=<the email you generated>
+TEST_EMAIL_PASSWORD=<your password>
+```
+
+3. Install packages
+
+```
+npm install
+```
+
+4. Run tests
+
+```
+npm run test
+```
+
 **Have fun! 🙂 🎉**

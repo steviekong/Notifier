@@ -1,15 +1,17 @@
 import Agenda, { Job, JobAttributesData } from "agenda";
 import nodemailer from "nodemailer";
 import { MailOptions } from "nodemailer/lib/json-transport";
-import { emailConfig } from "../Configs/emailConfig";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
 
 /** Job to send an email to a single user */
 class SendEmailJob{
   fromAddress: string;
   agenda: Agenda;
-  constructor(fromAddress: string, agenda: Agenda){
+  emailConfig: SMTPTransport.Options
+  constructor(fromAddress: string, agenda: Agenda, emailConfig: SMTPTransport.Options){
     this.fromAddress = fromAddress;
     this.agenda = agenda;
+    this.emailConfig = emailConfig;
   }
 
   defineJob = () => {
@@ -35,7 +37,7 @@ class SendEmailJob{
 
   sendEmailTransport = async (job : Job<JobAttributesData>): Promise<any> => {
     const { to, subject, text } = job.attrs.data;
-    const transporter = nodemailer.createTransport(emailConfig);
+    const transporter = nodemailer.createTransport(this.emailConfig);
 
     const mailOptions: MailOptions = {
       from: this.fromAddress,

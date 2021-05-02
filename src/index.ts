@@ -1,6 +1,6 @@
 import Agenda from "agenda"
 import { NotificationInterface, UserNotification } from "./models/userNotification";
-import JobCreator from "./JobCreators/JobCreator";
+import JobCreator from "./Services/JobCreatorService";
 import mongoose from "mongoose";
 import { User } from "./models/user"
 import express from "express"

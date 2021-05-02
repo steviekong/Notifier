@@ -9,3 +9,13 @@ export const emailConfig = {
     pass: process.env.SENDER_EMAIL_PASSWORD,
   }
 } as SMTPTransport.Options
+
+
+export const testEmailConfig = {
+  host: 'smtp.ethereal.email',
+  port: 587,
+  auth: {
+    user: process.env.TEST_EMAIL,
+    pass: process.env.TEST_EMAIL_PASSWORD
+  }
+}

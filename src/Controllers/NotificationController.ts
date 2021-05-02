@@ -1,4 +1,4 @@
-import JobCreator from "../JobCreators/JobCreator";
+import JobCreator from "../Services/JobCreatorService";
 import { SingleNotification, SingleNotificationSchema } from "../types/singleNotification";
 import express from "express";
 import Agenda from "agenda";
