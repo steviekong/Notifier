@@ -10,7 +10,7 @@ export const emailConfig = {
   }
 } as SMTPTransport.Options
 
-
+/** Email configuration for running tests */
 export const testEmailConfig = {
   host: 'smtp.ethereal.email',
   port: 587,

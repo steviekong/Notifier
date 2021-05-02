@@ -2,7 +2,9 @@
 
 Simple node app to send notifications to users via different channels email, slack etc. Only supports simple SMTP email delivery right now.
 
-Built with TypeScript, Node, ExpressJS and MongoDB.
+Built with TypeScript, Node, ExpressJS, Agenda and MongoDB.
+
+The project uses https://github.com/agenda/agenda to actually run schedule jobs and run them.
 
 ## Getting started
 
